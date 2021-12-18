@@ -31,10 +31,14 @@ function App () {
     }
   ])
 
+  const deleteTask = id => {
+    setTasks(tasks.filter(x => x.id !== id))
+  }
+
   return (
     <div className='container'>
       <Header title='To Do List' />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
   )
 }
